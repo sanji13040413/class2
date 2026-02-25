@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class CalculadoraCientifica {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("\n=== CALCULADORA CIENTÍFICA ===");
+            System.out.println("1. Potencia (base^exponente)");
+            System.out.println("2. Raíz cuadrada");
+            System.out.println("3. Seno");
+            System.out.println("4. Coseno");
+            System.out.println("5. Logaritmo natural");
+            System.out.println("6. Salir");
+            System.out.print("Elija una opción: ");
+
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+
+                case 1:
+                    System.out.print("Ingrese la base: ");
+                    double base = sc.nextDouble();
+
+                    System.out.print("Ingrese el exponente: ");
+                    double exponente = sc.nextDouble();
+
+                    double potencia = Math.pow(base, exponente);
+
+                    System.out.println("Resultado: " + potencia);
+                    break;
+
+                case 2:
+                    System.out.print("Ingrese el número: ");
+                    double numeroRaiz = sc.nextDouble();
+
+                    System.out.println("Resultado: " + Math.sqrt(numeroRaiz));
+                    break;
+
+                case 3:
+                    System.out.print("Ingrese el ángulo en grados: ");
+                    double anguloSeno = sc.nextDouble();
+
+                    double seno = Math.sin(Math.toRadians(anguloSeno));
+                    System.out.println("Resultado: " + seno);
+                    break;
+
+                case 4:
+                    System.out.print("Ingrese el ángulo en grados: ");
+                    double anguloCoseno = sc.nextDouble();
+
+                    double coseno = Math.cos(Math.toRadians(anguloCoseno));
+                    System.out.println("Resultado: " + coseno);
+                    break;
+
+                case 5:
+                    System.out.print("Ingrese el número: ");
+                    double numeroLog = sc.nextDouble();
+
+                    System.out.println("Resultado: " + Math.log(numeroLog));
+                    break;
+
+                case 6:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opción inválida.");
+            }
+
+        } while (opcion != 6);
+
+        sc.close();
+    }
+}
